@@ -21,6 +21,9 @@ public class InsertSort {
      * @param arr
      */
     public static void insertSort(int[] arr){
+        if(arr == null || arr.length < 2){
+            return;
+        }
         for(int i = 1 ; i < arr.length; i++){
             //先空出一个位置，方便元素插入
             int key = arr[i];
@@ -37,7 +40,19 @@ public class InsertSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{12,3,4,64,34,5,78,1,4,67,5};
+        int[] arr1 = new int[]{1};
+        int[] arr2 = new int[]{8,7,6,5,4,3,2,1};
+        int[] arr3 = new int[]{};
+        int[] arr4 = null;
         insertSort(arr);
+        insertSort(arr1);
+        insertSort(arr2);
+        insertSort(arr3);
+        insertSort(arr4);
         System.out.println(PrintUtil.ptint(arr));
+        System.out.println(PrintUtil.ptint(arr1));
+        System.out.println(PrintUtil.ptint(arr2));
+        System.out.println(PrintUtil.ptint(arr3));
+        System.out.println(PrintUtil.ptint(arr4));
     }
 }
